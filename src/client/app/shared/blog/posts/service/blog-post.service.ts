@@ -17,26 +17,14 @@ export class BlogPostService {
    */
   constructor(private http: Http) {}
 
-  generateFalsePost(id:string):Post {
-      let post:Post = new Post();
-      post.id = id;
-      post.name = 'This is a test';
-
-      return post;
-  }
-
   /**
    * Returns an Observable for the HTTP GET request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
   get(): Observable<Post[]> {
-      let posts:Post[] = new Array();
-      posts.push(this.generateFalsePost('1'));
-      posts.push(this.generateFalsePost('2'));
-      posts.push(this.generateFalsePost('3'));
-      posts.push(this.generateFalsePost('4'));
-      posts.push(this.generateFalsePost('5'));
-      return Observable.of(posts);
+    return this.http.get('https://enigmatic-headland-6062.herokuapp.com/v2/api/posts')
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
   }
 
   /**
