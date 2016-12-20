@@ -1,0 +1,10 @@
+<section id="blog-posts">
+    <h3 class="page-list-header secondary-background well well-small">
+        Latest Blog Posts
+    </h3>
+    <ul class="page-list">
+        <li *ngFor="let post of posts">
+            <a routerLink="/blog/post/{{post.id}}" >{{post.name}}</a>
+        </li>
+    </ul>
+</section>

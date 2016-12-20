@@ -1,0 +1,13 @@
+<section id="twitter">
+    <h3 class="page-list-header primary-background well well-small">
+        @NIDeveloper Tweets
+    </h3>
+    <ul class="page-list">
+        <li *ngFor="let tweet of tweets">
+            <blockquote>
+                <p>{{tweet.text}}</p>
+                <small>{{tweet.created_at}}</small>
+            </blockquote>
+        </li>
+    </ul>
+</section>

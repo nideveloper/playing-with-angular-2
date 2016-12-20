@@ -1,0 +1,41 @@
+<section id="search" class="bottom-border">
+      <div class="container">
+        <div class="row search-bar">
+            <nav class="col-md-7 navigation">
+                <div class="row padding-top">
+                    <div class="col-md-3">
+                        <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+                          Home
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+                          About
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a [routerLink]="['/blog']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a [routerLink]="['/contact']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+                          Contact
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="col-md-1"></div>
+            <div class="col-md-4 search padding-top">
+                <form action="http://www.nideveloper.co.uk/blog/search" name="searchform" method="post" onsubmit="return callSearch();">
+                    <div class="input-append">
+			            <input type="text" name="search" id="searchBox" placeholder="Search Here..." style="background:#f2f2f2;">
+                        <button class="btn btn-success" type="button">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+  </section>
