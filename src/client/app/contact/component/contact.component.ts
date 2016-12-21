@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   moduleId: module.id,
   selector: 'contact',
   templateUrl: 'contact.component.html',
-  styleUrls: []
+  styleUrls: ['contact.css']
 })
 export class ContactComponent { }

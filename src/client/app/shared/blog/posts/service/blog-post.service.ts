@@ -21,7 +21,7 @@ export class BlogPostService {
    * Returns an Observable for the HTTP GET request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
-  get(): Observable<Post[]> {
+  getLatestPosts(): Observable<Post[]> {
     return this.http.get('https://enigmatic-headland-6062.herokuapp.com/v2/api/posts')
                     .map((res: Response) => res.json())
                     .catch(this.handleError);

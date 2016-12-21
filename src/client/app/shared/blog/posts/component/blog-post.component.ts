@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPostService } from '../service/blog-post.service';
+import { Post } from '../service/blog-post.model'
+import * as moment from 'moment';
 
 /**
  * This class represents the toolbar component.
@@ -12,16 +14,16 @@ import { BlogPostService } from '../service/blog-post.service';
   styleUrls: []
 })
 export class BlogPostComponent { 
-    public posts:any[];
+    public posts:Post[];
     public errorMessage:string;
     
     constructor(public blogPostService:BlogPostService) {}
 
     ngOnInit() {
         //do nothing
-        this.blogPostService.get()
+        this.blogPostService.getLatestPosts()
             .subscribe(
-                posts => this.posts = posts,
+                (posts) => {this.posts = posts},
                 error => this.errorMessage = <any>error
             );
     }
