@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Post } from './blog-post.model';
+import { Category } from './blog-category.model';
 // import 'rxjs/add/operator/do';  // for debugging
 
+const API_ENDPOINT_V2 = 'https://enigmatic-headland-6062.herokuapp.com/v2/api/';
 /**
  * This class provides the NameList service with methods to read names and add names.
  */
 @Injectable()
 export class BlogPostService {
+
+  
 
   /**
    * Creates a new NameListService with the injected Http.
@@ -22,7 +26,37 @@ export class BlogPostService {
    * @return {string[]} The Observable for the HTTP request.
    */
   getLatestPosts(): Observable<Post[]> {
-    return this.http.get('https://enigmatic-headland-6062.herokuapp.com/v2/api/posts')
+    return this.http.get(API_ENDPOINT_V2+'posts')
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  getPost(id:number): Observable<Post> {
+    return this.http.get(API_ENDPOINT_V2+'posts/'+id)
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  searchByQueryString(query:string): Observable<Post[]> {
+    return this.http.get(API_ENDPOINT_V2+'search?query='+query)
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  searchSimilarByID(id:number): Observable<Post[]> {
+    return this.http.get(API_ENDPOINT_V2+'search?similar='+id)
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  getCategories(): Observable<Category[]> {
+    return this.http.get(API_ENDPOINT_V2+'categories')
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  getCategory(id:number): Observable<Category> {
+    return this.http.get(API_ENDPOINT_V2+'categories/'+id)
                     .map((res: Response) => res.json())
                     .catch(this.handleError);
   }
