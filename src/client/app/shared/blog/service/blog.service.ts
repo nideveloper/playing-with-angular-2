@@ -10,7 +10,7 @@ const API_ENDPOINT_V2 = 'https://enigmatic-headland-6062.herokuapp.com/v2/api/';
  * This class provides the NameList service with methods to read names and add names.
  */
 @Injectable()
-export class BlogPostService {
+export class BlogService {
 
   
 

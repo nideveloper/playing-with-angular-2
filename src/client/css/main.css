@@ -456,3 +456,11 @@ ul.page-list li:last-child{
 body {
   font-size: 18px !important;
 }
+
+.padded-list li{
+    margin-bottom: 20px
+}
+
+.navigation {
+    margin-bottom: 15px;
+}

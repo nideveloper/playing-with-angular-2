@@ -1,0 +1,11 @@
+<section id="blog-categories">
+    <h3 class="">
+        Categories
+    </h3>
+    <ul class="list-unstyled padded-list">
+        <li *ngFor="let category of categories">
+            <a routerLink="/blog/category/{{category.id}}" >{{category.name}}</a><br />
+            <small>{{category.description}}</small>
+        </li>
+    </ul>
+</section>
