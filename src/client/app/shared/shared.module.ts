@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ToolbarComponent } from './toolbar/index';
 import { NavbarComponent } from './navbar/index';
 import { NameListService } from './name-list/index';
-import { LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent } from './blog/index';
+import { LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent, BlogPostComponent , CategoryBlogPostsComponent} from './blog/index';
 import { NITwitterComponent } from './twitter/index';
 
 /**
@@ -15,9 +15,9 @@ import { NITwitterComponent } from './twitter/index';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  declarations: [ToolbarComponent, NavbarComponent, NITwitterComponent, LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent],
+  declarations: [ToolbarComponent, NavbarComponent, NITwitterComponent, LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent, BlogPostComponent, CategoryBlogPostsComponent],
   exports: [ToolbarComponent, NavbarComponent,
-    CommonModule, FormsModule, RouterModule, NITwitterComponent, LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent]
+    CommonModule, FormsModule, RouterModule, NITwitterComponent, LatestBlogPostsComponent, BlogPostCategoriesComponent, SimilarBlogPostsComponent, BlogPostComponent, CategoryBlogPostsComponent]
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {

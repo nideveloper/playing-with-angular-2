@@ -33,7 +33,7 @@ export class BlogService {
 
   getPost(id:number): Observable<Post> {
     return this.http.get(API_ENDPOINT_V2+'posts/'+id)
-                    .map((res: Response) => res.json())
+                    .map((res: Response) => res.json()[0])
                     .catch(this.handleError);
   }
 
@@ -45,6 +45,12 @@ export class BlogService {
 
   searchSimilarByID(id:number): Observable<Post[]> {
     return this.http.get(API_ENDPOINT_V2+'search?similar='+id)
+                    .map((res: Response) => res.json())
+                    .catch(this.handleError);
+  }
+
+  searchSimilarByCategoryID(id:number): Observable<Post[]> {
+    return this.http.get(API_ENDPOINT_V2+'search?category='+id)
                     .map((res: Response) => res.json())
                     .catch(this.handleError);
   }

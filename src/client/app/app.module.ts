@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AboutModule } from './about/about.module';
 import { BlogModule } from './blog/blog.module';
+import { BlogPostModule } from './blog-post/blog-post.module';
+import { BlogCategoryModule } from './category/category.module';
 import { HomeModule } from './home/home.module';
 import { ContactModule } from './contact/contact.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, AboutModule, BlogModule, HomeModule, ContactModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, AppRoutingModule, AboutModule, BlogModule, BlogPostModule, BlogCategoryModule, HomeModule, ContactModule, SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,

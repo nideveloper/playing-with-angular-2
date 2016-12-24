@@ -327,7 +327,7 @@ footer{
    background-color:  #5bb75b;
 }
 
-ul.page-list{
+.page-list{
     display: block;
     list-style: none;
     border:  1px solid #e6e6e6;
@@ -463,4 +463,26 @@ body {
 
 .navigation {
     margin-bottom: 15px;
+}
+
+.subtitle .name{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.subtitle .description {
+    margin-bottom: 30px;
+}
+
+.subtitle .step {
+    margin-bottom: 20px;
+}
+
+.number {
+    font-weight: bold;
+}
+
+figure img{
+    width: 100%;
 }
