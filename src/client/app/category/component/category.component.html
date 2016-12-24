@@ -1,4 +1,6 @@
-<h1>
-    Categories
-</h1>
-<ni-category-blog-posts id='7'></ni-category-blog-posts>
+<div class="row" style="margin-top: 20px;" *ngIf="doShow">
+    <ni-blog-post-categories class="col-md-3"></ni-blog-post-categories>
+    <div class="col-md-9">
+        <ni-category-blog-posts id='{{id}}'></ni-category-blog-posts>
+    </div>
+</div>

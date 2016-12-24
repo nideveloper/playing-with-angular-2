@@ -26,7 +26,7 @@ export class CategoryBlogPostsComponent {
     ngOnInit() {
         this.blogPostService.getCategory(this.id)
             .subscribe(
-                (category) => {this.category = category},
+                (category) => {this.category = category; console.log('category loaded')},
                 error => this.errorMessage = <any>error
             );
 

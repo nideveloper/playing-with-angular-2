@@ -63,7 +63,7 @@ export class BlogService {
 
   getCategory(id:number): Observable<Category> {
     return this.http.get(API_ENDPOINT_V2+'categories/'+id)
-                    .map((res: Response) => res.json())
+                    .map((res: Response) => res.json()[0])
                     .catch(this.handleError);
   }
 
