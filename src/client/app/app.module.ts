@@ -11,10 +11,11 @@ import { BlogPostModule } from './blog-post/blog-post.module';
 import { BlogCategoryModule } from './category/category.module';
 import { HomeModule } from './home/home.module';
 import { ContactModule } from './contact/contact.module';
+import { SearchModule } from './search/search.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  imports: [BrowserModule, HttpModule, AppRoutingModule, AboutModule, BlogModule, BlogPostModule, BlogCategoryModule, HomeModule, ContactModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, AppRoutingModule, AboutModule, BlogModule, BlogPostModule, BlogCategoryModule, HomeModule, ContactModule, SearchModule, SharedModule.forRoot()],
   declarations: [AppComponent],
   providers: [{
     provide: APP_BASE_HREF,

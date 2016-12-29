@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import { BlogService } from '../../service/blog.service';
 import { Post } from '../../service/blog-post.model'
 import * as moment from 'moment';
@@ -19,13 +20,16 @@ export class BlogPostComponent {
 
     @Input() id: number;
     
-    constructor(public blogPostService:BlogService) {}
+    constructor(public blogPostService:BlogService, private _sanitizer: DomSanitizer) {}
+
+    public trustHtml(html:string) : SafeHtml {
+       return this._sanitizer.bypassSecurityTrustHtml(html);
+    }
 
     ngOnInit() {
-        console.log('id: '+ this.id);
         this.blogPostService.getPost(this.id)
             .subscribe(
-                (post) => {this.post = post; console.log(post);},
+                (post) => {this.post = post;},
                 error => this.errorMessage = <any>error
             );
     }

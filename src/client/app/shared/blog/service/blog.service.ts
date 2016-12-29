@@ -12,6 +12,13 @@ const API_ENDPOINT_V2 = 'https://enigmatic-headland-6062.herokuapp.com/v2/api/';
 @Injectable()
 export class BlogService {
 
+  private firstFromArray(array:any[]):any{
+    let response = {};
+    if(array.length>0){
+      response = array[0];
+    }
+    return response;
+  }
   
 
   /**
@@ -33,7 +40,7 @@ export class BlogService {
 
   getPost(id:number): Observable<Post> {
     return this.http.get(API_ENDPOINT_V2+'posts/'+id)
-                    .map((res: Response) => res.json()[0])
+                    .map((res: Response) => this.firstFromArray(res.json()))
                     .catch(this.handleError);
   }
 
@@ -63,7 +70,7 @@ export class BlogService {
 
   getCategory(id:number): Observable<Category> {
     return this.http.get(API_ENDPOINT_V2+'categories/'+id)
-                    .map((res: Response) => res.json()[0])
+                    .map((res: Response) => this.firstFromArray(res.json()))
                     .catch(this.handleError);
   }
 

@@ -29,8 +29,8 @@
             <div class="col-md-4 search padding-top">
                 <form action="http://www.nideveloper.co.uk/blog/search" name="searchform" method="post" onsubmit="return callSearch();">
                     <div class="input-append">
-			            <input type="text" name="search" id="searchBox" placeholder="Search Here..." style="background:#f2f2f2;">
-                        <button class="btn btn-success" type="button">
+			            <input type="text" name="search" id="searchBox" #searchBox placeholder="Search Here..." style="background:#f2f2f2;">
+                        <button class="btn btn-success" type="button" (click)="search(searchBox.value)">
                             Search
                         </button>
                     </div>

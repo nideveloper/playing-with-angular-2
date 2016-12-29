@@ -2,6 +2,6 @@
     <h3 class="page-list-header secondary-background well well-small">
         {{post?.name}}
     </h3>
-    <section class='page-list' style='padding:15px;' [innerHTML]="post?.content">
+    <section class='page-list' style='padding:15px;' [innerHTML]="trustHtml(post?.content)">
     </section>
 </section>
