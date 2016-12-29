@@ -1,1 +1,1 @@
-web: npm run build.prod.exp
+web: npm run serve.prod.exp
