@@ -465,6 +465,10 @@ body {
     margin-bottom: 15px;
 }
 
+#blog-posts #title {
+    display: none;
+}
+
 .subtitle .name{
     font-weight: bold;
     margin-bottom: 20px;
