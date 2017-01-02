@@ -22,7 +22,7 @@ export class TwitterService {
    * @return {string[]} The Observable for the HTTP request.
    */
   get(): Observable<Tweet[]> {
-    return this.http.get('https://enigmatic-headland-6062.herokuapp.com/twitter/nideveloper')
+    return this.http.get('https://nideveloper-api.herokuapp.com/twitter/nideveloper')
                     .map((res: Response) => res.json())
     //              .do(data => console.log('server data:', data))  // debug
                     .catch(this.handleError);

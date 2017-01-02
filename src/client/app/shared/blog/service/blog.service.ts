@@ -5,7 +5,7 @@ import { Post } from './blog-post.model';
 import { Category } from './blog-category.model';
 // import 'rxjs/add/operator/do';  // for debugging
 
-const API_ENDPOINT_V2 = 'https://enigmatic-headland-6062.herokuapp.com/v2/api/';
+const API_ENDPOINT_V2 = 'https://nideveloper-api.herokuapp.com/v2/api/';
 /**
  * This class provides the NameList service with methods to read names and add names.
  */
